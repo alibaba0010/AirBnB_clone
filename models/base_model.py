@@ -51,6 +51,7 @@ class BaseModel:
         """
         self.created_at = self.created_at.isoformat()
         self.updated_at = self.updated_at.isoformat()
+        print(self.created_at)
         result_dictionary = {}
         result_dictionary['__class__'] = self.__class__.__name__
         result_dictionary.update(self.__dict__)
