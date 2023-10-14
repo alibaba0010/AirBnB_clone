@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-    This module defines all common attributes/methods for 
+    This module defines all common attributes/methods for
     other classes in our hbnb clone
 """
 from uuid import uuid4
