@@ -6,6 +6,7 @@ from models.place import Place
 from models.base_model import BaseModel
 import os
 
+
 class TestPlace(unittest.TestCase):
     """ a class for testing Place"""
 
@@ -74,6 +75,7 @@ class TestPlace(unittest.TestCase):
     def test_Place_sa_instance_state(self):
         """ test is _sa_instance_state has been removed """
         self.assertNotIn('_sa_instance_state', self.place.to_dict())
+
 
 if __name__ == "__main__":
     unittest.main()

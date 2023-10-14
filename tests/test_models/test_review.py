@@ -6,6 +6,7 @@ from models.review import Review
 from models.base_model import BaseModel
 import os
 
+
 class TestReview(unittest.TestCase):
     """ a class for testing Review"""
 
@@ -57,6 +58,7 @@ class TestReview(unittest.TestCase):
     def test_Review_sa_instance_state(self):
         """ test is _sa_instance_state has been removed """
         self.assertNotIn('_sa_instance_state', self.rev.to_dict())
+
 
 if __name__ == "__main__":
     unittest.main()

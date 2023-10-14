@@ -6,6 +6,7 @@ from models.state import State
 from models.base_model import BaseModel
 import os
 
+
 class TestState(unittest.TestCase):
     """ a class for testing State model"""
 
@@ -51,6 +52,7 @@ class TestState(unittest.TestCase):
     def test_State_sa_instance_state(self):
         """ test is _sa_instance_state has been removed """
         self.assertNotIn('_sa_instance_state', self.state.to_dict())
+
 
 if __name__ == "__main__":
     unittest.main()
