@@ -9,6 +9,7 @@ import os
 class TestCity(unittest.TestCase):
     """ a class for testing City"""
 
+
     @classmethod
     def setUpClass(cls):
         """ Example Data """
@@ -55,6 +56,7 @@ class TestCity(unittest.TestCase):
     def test_City_sa_instance_state(self):
         """ test is _sa_instance_state has been removed """
         self.assertNotIn('_sa_instance_state', self.city.to_dict())
+
 
 if __name__ == "__main__":
     unittest.main()

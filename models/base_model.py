@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 
 """
-    This module defines all common attributes/methods for other classes
+    This module defines all common attributes/methods for other classes in our hbnb clone
 """
 from uuid import uuid4
 from datetime import datetime
 
 
-class BaseModel():
+class BaseModel:
     """ The Base Model class """
     def __init__(self, *args, **kwargs):
         """ This method initializes an instance of a model """
