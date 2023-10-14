@@ -12,7 +12,7 @@ from models.amenity import Amenity
 from models.review import Review
 
 
-class AirBNBCommand(cmd.Cmd):
+class HBNBCommand(cmd.Cmd):
     """ Contains the functionality for the HBNB console"""
 
     # determines prompt for interactive/non-interactive modes
@@ -55,7 +55,7 @@ class AirBNBCommand(cmd.Cmd):
 
             # isolate and validate <command>
             _cmd = pline[pline.find('.') + 1:pline.find('(')]
-            if _cmd not in AirBNBCommand.dot_cmds:
+            if _cmd not in HBNBCommand.dot_cmds:
                 raise Exception
 
             # if parantheses contain arguments, parse them
@@ -118,10 +118,10 @@ class AirBNBCommand(cmd.Cmd):
         if not args:
             print("** class name missing **")
             return
-        elif args not in AirBNBCommand.classes:
+        elif args not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
-        new_instance = AirBNBCommand.classes[args]()
+        new_instance = HBNBCommand.classes[args]()
         storage.save()
         print(new_instance.id)
         storage.save()
@@ -145,7 +145,7 @@ class AirBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
 
-        if c_name not in AirBNBCommand.classes:
+        if c_name not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
 
@@ -176,7 +176,7 @@ class AirBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
 
-        if c_name not in AirBNBCommand.classes:
+        if c_name not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
 
@@ -203,7 +203,7 @@ class AirBNBCommand(cmd.Cmd):
 
         if args:
             args = args.split(' ')[0]  # remove possible trailing args
-            if args not in AirBNBCommand.classes:
+            if args not in HBNBCommand.classes:
                 print("** class doesn't exist **")
                 return
             for k, v in storage._FileStorage__objects.items():
@@ -243,7 +243,7 @@ class AirBNBCommand(cmd.Cmd):
         else:  # class name not present
             print("** class name missing **")
             return
-        if c_name not in AirBNBCommand.classes:  # class name invalid
+        if c_name not in HBNBCommand.classes:  # class name invalid
             print("** class doesn't exist **")
             return
 
@@ -307,8 +307,8 @@ class AirBNBCommand(cmd.Cmd):
                     print("** value missing **")
                     return
                 # type cast as necessary
-                if att_name in AirBNBCommand.types:
-                    att_val = AirBNBCommand.types[att_name](att_val)
+                if att_name in HBNBCommand.types:
+                    att_val = HBNBCommand.types[att_name](att_val)
 
                 # update dictionary with name, value pair
                 new_dict.__dict__.update({att_name: att_val})
@@ -321,4 +321,4 @@ class AirBNBCommand(cmd.Cmd):
         print("Usage: update <className> <id> <attName> <attVal>\n")
 
 if __name__ == "__main__":
-    AirBNBCommand().cmdloop()
+    HBNBCommand().cmdloop()
