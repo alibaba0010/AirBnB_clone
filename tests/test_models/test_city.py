@@ -7,7 +7,7 @@ from models.base_model import BaseModel
 import os
 
 
-class TestCity(unittest.TestCase):    
+class TestCity(unittest.TestCase):
     """ a class for testing City"""
 
     @classmethod
