@@ -34,8 +34,8 @@ class BaseModel:
             storage.new(self)
 
     def __str__(self):
-        """ This method defines a custom string method 
-        Returns a string representation of the instance
+        """ This method defines a custom string method
+            Returns a string representation of the instance
         """
         return f"[BaseModel] ({self.id}) {self.__dict__}"
 
