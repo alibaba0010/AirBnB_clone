@@ -27,7 +27,7 @@ class BaseModel:
                 else:
                     setattr(self, key, val)
         else:
-            from models import storage                       
+            from models import storage
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
@@ -41,7 +41,7 @@ class BaseModel:
 
     def save(self):
         """ This method updates the "updates_at" with the current datetime """
-        from models import storage        
+        from models import storage
         self.updated_at = datetime.now()
         storage.save()
         
