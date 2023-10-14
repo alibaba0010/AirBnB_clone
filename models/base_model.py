@@ -49,10 +49,10 @@ class BaseModel:
         """ returns a dictionary containing
             all keys/values of __dict__ of the instance
         """
-        self.created_at = self.created_at.isoformat()
-        self.updated_at = self.updated_at.isoformat()
-        print(self.created_at)
         result_dictionary = {}
-        result_dictionary['__class__'] = self.__class__.__name__
         result_dictionary.update(self.__dict__)
+        result_dictionary.update({'__class__':
+                          (str(type(self)).split('.')[-1]).split('\'')[0]})
+        result_dictionary['created_at'] = self.created_at.isoformat()
+        result_dictionary['updated_at'] = self.updated_at.isoformat()
         return result_dictionary
