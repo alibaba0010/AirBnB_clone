@@ -35,7 +35,7 @@ class BaseModel:
 
     def __str__(self):
         """ This method defines a custom string method 
-            Returns a string representation of the instance
+        Returns a string representation of the instance
         """
         return f"[BaseModel] ({self.id}) {self.__dict__}"
 
@@ -44,7 +44,7 @@ class BaseModel:
         from models import storage
         self.updated_at = datetime.now()
         storage.save()
-        
+                
     def to_dict(self):
         """ returns a dictionary containing
             all keys/values of __dict__ of the instance
