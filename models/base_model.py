@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 """
-    This module defines all common attributes/methods for other classes in our hbnb clone
+    This module defines all common attributes/methods for 
+    other classes in our hbnb clone
 """
 from uuid import uuid4
 from datetime import datetime
@@ -44,7 +45,6 @@ class BaseModel:
         self.updated_at = datetime.now()
         storage.save()
         
-
     def to_dict(self):
         """ returns a dictionary containing
             all keys/values of __dict__ of the instance
