@@ -52,7 +52,8 @@ class BaseModel:
         result_dictionary = {}
         result_dictionary.update(self.__dict__)
         result_dictionary.update({'__class__':
-                                 (str(type(self)).split('.')[-1]).split('\'')[0]})
+                                 (str(type(self))
+                                  .split('.')[-1]).split('\'')[0]})
         result_dictionary['created_at'] = self.created_at.isoformat()
         result_dictionary['updated_at'] = self.updated_at.isoformat()
         return result_dictionary
